@@ -25,7 +25,7 @@ with col2:
     <div style='padding-top: 12px;'>
         <h1 style='font-size: 42px; font-family: Georgia, serif; font-weight: bold; margin: 0;'>
             <span style='color: #00bcd4;'>DrRayatPlay</span>
-            <span style='font-size: 32px; font-weight: normal; vertical-align: super; color: #FFD700;'>™</span>
+            <span style='font-size: 32px; font-weight: normal; vertical-align: super; color: #333333;'>™</span>
             <span style='font-size: 20px; font-weight: normal; opacity: 0.8; color: red;'> chatbot</span>
         </h1>
     </div>
