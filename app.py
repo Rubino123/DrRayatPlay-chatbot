@@ -97,7 +97,7 @@ st.markdown("""
 </div>
 
 <div style='text-align: center; font-size: 14px; opacity: 0.8; padding-top: 12px;'>
-    © DrRayatPlay.com ~ All Rights Reserved.
+    © 2026 DrRayatPlay.com ~ All Rights Reserved.
 </div>
 
 <div style='text-align: center; font-size: 13px; opacity: 0.7; padding-top: 4px;'>
