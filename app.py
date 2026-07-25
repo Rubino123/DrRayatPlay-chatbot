@@ -6,6 +6,8 @@ from groq import Groq
 from PIL import Image
 import os
 
+st.set_page_config(page_title="DrRayatPlay", page_icon="favicon.png")
+
 ############################################################
 # GROQ CLIENT (Chatbot engine)
 ############################################################
