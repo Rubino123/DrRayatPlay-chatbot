@@ -7,6 +7,16 @@ from PIL import Image
 import os
 
 ############################################################
+# FORCE STREAMLIT TO SERVE APPLE TOUCH ICON
+############################################################
+def _serve_apple_icon():
+    icon_file = "apple-touch-icon.png"
+    if os.path.exists(icon_file):
+        st.image(icon_file, width=1)
+
+_serve_apple_icon()
+
+############################################################
 # PAGE CONFIG (Favicon + Apple Touch Icon)
 ############################################################
 icon_path = os.path.join(os.path.dirname(__file__), "apple-touch-icon.png")
