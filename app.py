@@ -6,7 +6,14 @@ from groq import Groq
 from PIL import Image
 import os
 
-st.set_page_config(page_title="DrRayatPlay", page_icon="favicon.png")
+############################################################
+# PAGE CONFIG (Favicon + Apple Touch Icon)
+############################################################
+icon_path = os.path.join(os.path.dirname(__file__), "apple-touch-icon.png")
+if os.path.exists(icon_path):
+    st.set_page_config(page_title="DrRayatPlay", page_icon=Image.open(icon_path))
+else:
+    st.set_page_config(page_title="DrRayatPlay", page_icon="favicon.png")
 
 ############################################################
 # GROQ CLIENT (Chatbot engine)
