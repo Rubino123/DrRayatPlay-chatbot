@@ -93,7 +93,7 @@ st.markdown("""
 <hr style='margin-top: 40px; border: none; border-top: 1px solid #66c2ff55;'>
 
 <div style='text-align: center; font-size: 16px; color: #0088CC; padding-top: 10px;'>
-    ~ Thanks for chatting with <span style='font-weight: bold;'>Dr. Ray at Play</span><span style='font-size: 14px; vertical-align: super;'>™</span> ~
+    ~ Thanks for chatting with <span style='font-weight: bold;'>DrRayatPlay</span><span style='font-size: 14px; vertical-align: super;'>™</span> ~
 </div>
 
 <div style='text-align: center; font-size: 14px; opacity: 0.8; padding-top: 12px;'>
