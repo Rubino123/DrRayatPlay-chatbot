@@ -6,6 +6,7 @@ from groq import Groq
 from PIL import Image
 import os
 
+
 ############################################################
 # PAGE CONFIG MUST COME FIRST
 ############################################################
@@ -18,6 +19,12 @@ st.set_page_config(
 ############################################################
 # GROQ CLIENT (Chatbot engine)
 ############################################################
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+############################################################
+# GROQ CLIENT (Chatbot engine)
+############################################################
+# Uses your private Streamlit Secret
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 ############################################################
@@ -97,9 +104,6 @@ if send_clicked:
         )
         st.write(response.choices[0].message.content)
 
-############################################################
-# FOOTER
-############################################################
 st.markdown("""
 <hr style='margin-top: 40px; border: none; border-top: 1px solid #66c2ff55;'>
 
@@ -115,3 +119,5 @@ st.markdown("""
     Designed and Developed by Sharon Rubino, B.S., MCS
 </div>
 """, unsafe_allow_html=True)
+
+# redeploy fix
