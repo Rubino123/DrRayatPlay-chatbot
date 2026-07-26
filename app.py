@@ -1,4 +1,14 @@
 ############################################################
+# VERSION: v2 — July 26, 2026
+# Notes:
+# - Banner centered
+# - Shark icon centered
+# - Clean Streamlit-safe layout
+# - No unsupported <head> injection
+# - Favicon via page_icon only
+############################################################
+
+############################################################
 # IMPORTS - app for chatbot
 ############################################################
 import streamlit as st
