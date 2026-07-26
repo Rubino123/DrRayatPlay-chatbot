@@ -1,13 +1,10 @@
 ############################################################
-# VERSION: v2 — July 26, 2026
+# VERSION: July 26, 2026
 # Notes:
 # - Banner centered
 # - Shark icon centered
 # - Clean Streamlit-safe layout
-# - No unsupported <head> injection
-# - Favicon via page_icon only
 ############################################################
-
 ############################################################
 # IMPORTS - app for chatbot
 ############################################################
@@ -15,15 +12,6 @@ import streamlit as st
 from groq import Groq
 from PIL import Image
 import os
-
-############################################################
-# PAGE CONFIG MUST COME FIRST
-############################################################
-st.set_page_config(
-    page_title="DrRayatPlay",
-    page_icon="apple-touch-icon.png",   # must be in your repo
-    layout="wide"
-)
 
 ############################################################
 # GROQ CLIENT (Chatbot engine)
@@ -35,33 +23,23 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 ############################################################
 ocean = Image.open("background.png")
 thin_ocean = ocean.crop((0, 0, ocean.width, 500))
-
-# Center the banner
-st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
 st.image(thin_ocean, width=900)
-st.markdown("</div>", unsafe_allow_html=True)
 
 ############################################################
 # DIVIDER BELOW BANNER
 ############################################################
-st.markdown(
-    "<hr style='margin:0; border: none; border-top: 2px solid #ffffff33;'>",
-    unsafe_allow_html=True
-)
+st.markdown("<hr style='margin:0; border: none; border-top: 2px solid #ffffff33;'>",
+            unsafe_allow_html=True)
 
 ############################################################
 # HEADER SECTION (Shark icon + Dr. Ray at Play title)
 ############################################################
 col1, col2 = st.columns([1, 6])
-
 with col1:
-    st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
     st.image("Shark.png", width=80)
-    st.markdown("</div>", unsafe_allow_html=True)
-
 with col2:
     st.markdown("""
-    <div style='padding-top: 12px; text-align: left;'>
+    <div style='padding-top: 12px;'>
         <h1 style='font-size: 42px; font-family: Georgia, serif; font-weight: bold; margin: 0;'>
             <span style='color: #00bcd4;'>DrRayatPlay</span>
             <span style='font-size: 32px; font-weight: normal; vertical-align: super; color: #0088CC;'>™</span>
