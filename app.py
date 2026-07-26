@@ -1,5 +1,5 @@
 ############################################################
-# IMPORTS
+# IMPORTS - app for chatbot
 ############################################################
 import streamlit as st
 from groq import Groq
@@ -7,23 +7,29 @@ from PIL import Image
 import os
 
 ############################################################
-# FORCE STREAMLIT TO SERVE APPLE TOUCH ICON
+# APPLE TOUCH ICON (iOS Home Screen Support)
+# IMPORTANT:
+# - This MUST come immediately after imports
+# - REMOVE any st.set_page_config(page_icon=...) below
+# - REMOVE your _serve_apple_icon() function entirely
 ############################################################
-def _serve_apple_icon():
-    icon_file = "apple-touch-icon.png"
-    if os.path.exists(icon_file):
-        st.image(icon_file, width=1)
+ICON_URL = "https://rubino123-drrayatplay-chatbot-app-qabgyd.streamlit.app/apple-touch-icon.png"
 
-_serve_apple_icon()
+st.markdown(
+    f"""
+    <link rel="apple-touch-icon" href="{ICON_URL}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{ICON_URL}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{ICON_URL}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    """,
+    unsafe_allow_html=True
+)
 
 ############################################################
-# PAGE CONFIG (Favicon + Apple Touch Icon)
+# PAGE CONFIG (title only — DO NOT set page_icon)
 ############################################################
-icon_path = os.path.join(os.path.dirname(__file__), "apple-touch-icon.png")
-if os.path.exists(icon_path):
-    st.set_page_config(page_title="DrRayatPlay", page_icon=Image.open(icon_path))
-else:
-    st.set_page_config(page_title="DrRayatPlay", page_icon="favicon.png")
+st.set_page_config(page_title="DrRayatPlay")
 
 ############################################################
 # GROQ CLIENT (Chatbot engine)
