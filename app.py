@@ -9,34 +9,15 @@ import os
 ############################################################
 # PAGE CONFIG MUST COME FIRST
 ############################################################
-st.set_page_config(page_title="DrRayatPlay")
-
-############################################################
-# APPLE TOUCH ICON (iOS Home Screen Support)
-# MUST COME IMMEDIATELY AFTER PAGE CONFIG
-############################################################
-ICON_URL = "https://rubino123-drrayatplay-chatbot-app-qabgyd.streamlit.app/apple-touch-icon.png"
-
-st.markdown(
-    f"""
-    <link rel="apple-touch-icon" href="{ICON_URL}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{ICON_URL}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{ICON_URL}">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    """,
-    unsafe_allow_html=True
+st.set_page_config(
+    page_title="DrRayatPlay",
+    page_icon="apple-touch-icon.png",   # must be in your repo
+    layout="wide"
 )
 
 ############################################################
 # GROQ CLIENT (Chatbot engine)
 ############################################################
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
-############################################################
-# GROQ CLIENT (Chatbot engine)
-############################################################
-# Uses your private Streamlit Secret
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 ############################################################
@@ -116,6 +97,9 @@ if send_clicked:
         )
         st.write(response.choices[0].message.content)
 
+############################################################
+# FOOTER
+############################################################
 st.markdown("""
 <hr style='margin-top: 40px; border: none; border-top: 1px solid #66c2ff55;'>
 
@@ -131,6 +115,3 @@ st.markdown("""
     Designed and Developed by Sharon Rubino, B.S., MCS
 </div>
 """, unsafe_allow_html=True)
-
-# redeploy fix
-
