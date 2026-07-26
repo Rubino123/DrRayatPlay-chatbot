@@ -6,7 +6,6 @@ from groq import Groq
 from PIL import Image
 import os
 
-
 ############################################################
 # PAGE CONFIG MUST COME FIRST
 ############################################################
@@ -22,17 +21,15 @@ st.set_page_config(
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 ############################################################
-# GROQ CLIENT (Chatbot engine)
-############################################################
-# Uses your private Streamlit Secret
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
-############################################################
 # TOP BANNER (Ocean background)
 ############################################################
 ocean = Image.open("background.png")
 thin_ocean = ocean.crop((0, 0, ocean.width, 500))
+
+# Center the banner
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
 st.image(thin_ocean, width=900)
+st.markdown("</div>", unsafe_allow_html=True)
 
 ############################################################
 # DIVIDER BELOW BANNER
@@ -48,11 +45,13 @@ st.markdown(
 col1, col2 = st.columns([1, 6])
 
 with col1:
+    st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
     st.image("Shark.png", width=80)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
-    <div style='padding-top: 12px;'>
+    <div style='padding-top: 12px; text-align: left;'>
         <h1 style='font-size: 42px; font-family: Georgia, serif; font-weight: bold; margin: 0;'>
             <span style='color: #00bcd4;'>DrRayatPlay</span>
             <span style='font-size: 32px; font-weight: normal; vertical-align: super; color: #0088CC;'>™</span>
@@ -104,6 +103,9 @@ if send_clicked:
         )
         st.write(response.choices[0].message.content)
 
+############################################################
+# FOOTER
+############################################################
 st.markdown("""
 <hr style='margin-top: 40px; border: none; border-top: 1px solid #66c2ff55;'>
 
@@ -119,5 +121,3 @@ st.markdown("""
     Designed and Developed by Sharon Rubino, B.S., MCS
 </div>
 """, unsafe_allow_html=True)
-
-# redeploy fix
