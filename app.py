@@ -7,11 +7,13 @@ from PIL import Image
 import os
 
 ############################################################
+# PAGE CONFIG MUST COME FIRST
+############################################################
+st.set_page_config(page_title="DrRayatPlay")
+
+############################################################
 # APPLE TOUCH ICON (iOS Home Screen Support)
-# IMPORTANT:
-# - This MUST come immediately after imports
-# - REMOVE any st.set_page_config(page_icon=...) below
-# - REMOVE your _serve_apple_icon() function entirely
+# MUST COME IMMEDIATELY AFTER PAGE CONFIG
 ############################################################
 ICON_URL = "https://rubino123-drrayatplay-chatbot-app-qabgyd.streamlit.app/apple-touch-icon.png"
 
@@ -27,9 +29,9 @@ st.markdown(
 )
 
 ############################################################
-# PAGE CONFIG (title only — DO NOT set page_icon)
+# GROQ CLIENT (Chatbot engine)
 ############################################################
-st.set_page_config(page_title="DrRayatPlay")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 ############################################################
 # GROQ CLIENT (Chatbot engine)
