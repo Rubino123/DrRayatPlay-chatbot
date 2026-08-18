@@ -86,7 +86,7 @@ if send_clicked:
         st.write("How can I help you?")
     else:
         response = client.chat.completions.create(
-            model="gpt-oss-20b",
+            model="GPT‑OSS‑20B",
             messages=[{"role": "user", "content": user_input}]
         )
         st.write(response.choices[0].message.content)
