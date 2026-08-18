@@ -86,7 +86,7 @@ if send_clicked:
         st.write("How can I help you?")
     else:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="llama3-8b-8192",
             messages=[{"role": "user", "content": user_input}]
         )
         st.write(response.choices[0].message.content)
