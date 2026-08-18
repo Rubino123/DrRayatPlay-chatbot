@@ -86,7 +86,7 @@ if send_clicked:
         st.write("How can I help you?")
     else:
         response = client.chat.completions.create(
-            model="mixtral-8x7b-32768",
+            model="gemma2-9b-it",
             messages=[{"role": "user", "content": user_input}]
         )
         st.write(response.choices[0].message.content)
